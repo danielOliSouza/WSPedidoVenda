@@ -6,11 +6,6 @@ import javax.persistence.*;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.google.gson.annotations.Expose;
 
-
-/**
- * The persistent class for the itempedidovenda database table.
- * 
- */
 @Entity
 public class ItemPedidoVenda implements Serializable {
 	private static final long serialVersionUID = 1L;
