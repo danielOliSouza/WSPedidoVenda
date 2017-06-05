@@ -35,6 +35,7 @@ public class PedidoVendaServices {
 		produtos = new Produtos();
 	}
 	//Format JSON json="{\"pedidovenda\": {\"idcliente\":1,\"items\":[{\"idproduto\": 1, \"qtd\":01},{\"idproduto\": 2, \"qtd\":01}]}}";
+	
 	public void salvar(String json) {
 		PedidoVenda pedidoVenda = new PedidoVenda();
 		
@@ -49,13 +50,13 @@ public class PedidoVendaServices {
 				ItemPedidoVenda item = new ItemPedidoVenda();
 				item.setQtd(jItems.getJSONObject(i).getInt("qtd"));
 				item.setProduto(produtos.findProduto(jItems.getJSONObject(i).getInt("idproduto")));
-				//item.setPedidovenda(pedidoVenda);
+				item.setPedidovenda(pedidoVenda);
 				pedidoVenda.getItempedidovendas().add(item);
 			}
 			
 			pedidoVendas.guardar(pedidoVenda);
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			System.out.println(e.getMessage() + " - " + json);
 		}
 		
 		

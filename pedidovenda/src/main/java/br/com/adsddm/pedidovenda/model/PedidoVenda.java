@@ -2,6 +2,7 @@ package br.com.adsddm.pedidovenda.model;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
@@ -20,9 +21,9 @@ public class PedidoVenda implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="pedidovenda_id")
 	private Integer id;
-	@OneToMany(mappedBy="pedidovenda")
-	@JsonManagedReference
+	@OneToMany(mappedBy="pedidovenda", cascade=CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<ItemPedidoVenda> itempedidovendas = new ArrayList<>();
 	@ManyToOne
 	private Cliente cliente;

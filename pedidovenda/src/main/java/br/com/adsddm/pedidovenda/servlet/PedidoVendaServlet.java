@@ -32,16 +32,17 @@ public class PedidoVendaServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//String json = request.getParameter("json");
-		//String status = "OK";
-		//if(!json.isEmpty()){
-			pedidoVendaServices.salvar("");
-		//}
-		//else{
-		//	status = "invalid";
-		//}
+		String json = request.getParameter("json");
+		String status = "OK";
+		if(!json.isEmpty()){
+			System.out.println(json);
+			pedidoVendaServices.salvar(json);
+		}
+		else{
+			status = "invalid";
+		}
 		response.setCharacterEncoding("UTF-8");  
 		response.setContentType("text/plain");
-	    response.getWriter().print("ok");
+	    response.getWriter().print(status);
 	}
 }

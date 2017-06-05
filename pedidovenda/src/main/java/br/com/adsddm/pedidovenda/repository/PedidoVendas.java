@@ -9,7 +9,7 @@ import br.com.adsddm.pedidovenda.util.Transactional;
 public class PedidoVendas {
 	private EntityManager manager = EntityManagerProducer.createEntityManager();
 	
-	@Transactional
+	
 	public void guardar(PedidoVenda pedidoVenda) {
 		manager.getTransaction().begin();
 		manager.persist(pedidoVenda);
