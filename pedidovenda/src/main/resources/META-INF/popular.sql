@@ -1,7 +1,3 @@
-INSERT INTO cliente (nome) values ('Fulano de Tal'), ('Ciclano de Tal'), ('Beltrano de Tal');
+INSERT INTO cliente (nome, cpf) values ('Fulano de Tal', '00000000000'), ('Ciclano de Tal', '00000000001'), ('Beltrano de Tal', '00000000002'), ('Cliente A', '00000000003'), ('Cliente B', '00000000004'), ('Cliente C', '00000000005'), ('Cliente D', '00000000006'), ('Cliente E', '00000000007'), ('Cliente F', '00000000008'), ('Cliente G', '00000000009');
 
-INSERT INTO produto (nome, preco) values ('Prod A', 12.1), ('Prod B', 234.55), ('Prod C', 21.3);
-
-INSERT INTO pedidovenda (cliente_id) values (1),(2);
-
-INSERT INTo itempedidovenda (qtd, pedidovenda_id, produto_id) values (12,1,1), (2,1,2), (23,2,1);
+INSERT INTO Produto (nome, preco) values ('Produto A', 12.1), ('Produto B', 234.55), ('Produto C', 21.3), ('Produto D', 2.1), ('Produto E', 24.55), ('Produto F', 251.3), ('Produto G', 0.67), ('Produto H', 1), ('Produto I', 0.55), ('Produto J', 4.3), ('Produto L', 82.1), ('Produto M', 34.55), ('Produto N', 9.3), ('Produto P', 12.99), ('Produto Q', 1.55), ('Produto R', 11.3);
